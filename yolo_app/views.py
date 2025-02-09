@@ -6,7 +6,7 @@ from django.core.files.storage import FileSystemStorage
 from ultralytics import YOLO
 
 # Load YOLO Model once
-model_path = "D:\\Road Safety Hackathon\\Accident-prediction.pt"
+model_path = r"C:\Accident_detection\django_yolo_project\yolo_model\best (1).pt";
 yolo = YOLO(model_path)
 
 def process_video_stream(video_path):
