@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Video for Processing</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="video" accept="video/*" required>
+            <button type="submit">Upload & Process</button>
+        </form>
+
+        {% if processed_video_url %}
+        <div class="video-container">
+            <h3>Processed Video:</h3>
+            <video controls width="600">
+                <source src="{{ processed_video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
